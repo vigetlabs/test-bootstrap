@@ -4,5 +4,4 @@ before_script:
   - npm install -d
 
 node_js:
-  - "0.11"
   - "0.10"
