@@ -14,7 +14,13 @@ This will execute the [Jest](http://facebook.github.io/jest/) command line inter
 
 ## Writing new tests
 
-Jest scans for folders matching `__test__`. This is particularly useful because it allows you to write tests that are local to given scripts. When adding a new test, create a new file within one of these directories matching the pattern: `*-test.js`.
+Jest scans for folders matching `__test__`. This is particularly useful because it allows you to write tests that are local to given scripts. This is really handy for CommonJS.
+
+When adding a new test, create a new file within one of these directories matching the pattern: `*-test.js`.
+
+## But I have DOM manipulation!
+
+Jest gives each test its own unique DOM! It uses [jsdom](https://github.com/tmpvar/jsdom) under the hood to accomplish this.
 
 ## But I write CoffeeScript!
 
