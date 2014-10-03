@@ -28,4 +28,9 @@ Build settings for Travis CLI are configured in a `.travis.yml` file at the root
 
 ## But what about Jenkins?
 
-Ask a backend-dev about adding `npm test` to the `.jenkins/build.sh` configuration file of your project.
+Ask a backend-dev about adding the following to the `.jenkins/build.sh` configuration file of your project:
+
+```
+npm install -d
+npm test
+```
