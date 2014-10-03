@@ -4,11 +4,13 @@
   "description": "A bootstrap for setting up testing.",
   "main": "index.js",
   "scripts": {
-    "test": "jest"
+    "test": "jest && npm run test:accessibility",
+    "test:accessibility":"pa11y file://`pwd`/index.html"
   },
   "author": "Nate Hunzaker",
   "license": "MIT",
   "devDependencies": {
-    "jest-cli": "^0.1.18"
+    "jest-cli": "^0.1.18",
+    "pa11y": "^1.6.1"
   }
 }
