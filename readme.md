@@ -10,23 +10,21 @@ To run tests, enter the following commend:
 npm test
 ```
 
-This will execute the [Jest](http://facebook.github.io/jest/) command line interface and scan the project for `__test__` directories.
+This will execute the [Jest](http://facebook.github.io/jest/) command line interface and scan the project for `__test__` directories. `npm test` is a fantastic way to run tests on any integration server, as it will use local dependencies for any global command line tools.
 
-## `npm test` ?
+## Writing new JavaScript tests
 
-The test command is configured in the `scripts` property of `package.json`. `npm test` will execute the command configured for the `test` attribute of this property. For this project, that command is simply `jest`.
+Jest scans for folders matching `__test__`. This is particularly useful because it allows you to write tests that are local to given scripts. When adding a new test, create a new file within one of these directories matching the pattern: `*-test.js`.
 
-`npm test`, and `npm run {x}` in general is a fantastic way to run node based tasks. When activated, `npm` will use local dependencies for any global command line tools (such as `gulp`, `grunt`, or `browserify`). This means you don't have to globally install anything on your integration server.
+## Accessibility testing
 
-## Writing new tests
+Though no substitute for human testing, this project uses [pa11y](https://github.com/nature/pa11y), a fantastic tool for automated accessibility testing. You can run it with:
 
-Jest scans for folders matching `__test__`. This is particularly useful because it allows you to write tests that are local to given scripts. This is really handy for CommonJS.
+```
+npm run test:accessibility
+```
 
-When adding a new test, create a new file within one of these directories matching the pattern: `*-test.js`.
-
-## But I have DOM manipulation!
-
-Jest gives each test its own unique DOM! It uses [jsdom](https://github.com/tmpvar/jsdom) under the hood to accomplish this.
+This will run `pa11y` on `index.html`. It will fail, for demonstration purposes.
 
 ## But I write CoffeeScript!
 
@@ -40,13 +38,4 @@ Build settings for Travis CLI are configured in a `.travis.yml` file at the root
 
 ## But what about Jenkins?
 
-Ask a backend-dev about adding the following to the `.jenkins/build.sh` configuration file of your project:
-
-```
-npm install -d
-npm test
-```
-
-## Why Jest?
-
-[I](https://github.com/nhunzaker/) like Jest because it does a good job of isolating tests. Each test gets its own DOM and module system. This is super handy for writing unit tests. Also, because modules must be unmocked by default, it helps to expose dependencies very clearly.
+Ask a backend-dev about adding `npm test` to the `.jenkins/build.sh` configuration file of your project.
