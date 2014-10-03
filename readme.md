@@ -12,6 +12,8 @@ npm test
 
 This will execute the [Jest](http://facebook.github.io/jest/) command line interface and scan the project for `__test__` directories.
 
+## `npm test` ?
+
 The test command is configured in the `scripts` property of `package.json`. `npm test` will execute the command configured for the `test` attribute of this property. For this project, that command is simply `jest`.
 
 `npm test`, and `npm run {x}` in general is a fantastic way to run node based tasks. When activated, `npm` will use local dependencies for any global command line tools (such as `gulp`, `grunt`, or `browserify`). This means you don't have to globally install anything on your integration server.
