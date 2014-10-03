@@ -1,0 +1,14 @@
+{
+  "name": "test-bootstrap",
+  "version": "1.0.0",
+  "description": "A bootstrap for setting up testing.",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Nate Hunzaker",
+  "license": "MIT",
+  "devDependencies": {
+    "jest-cli": "^0.1.18"
+  }
+}
