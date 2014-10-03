@@ -4,7 +4,7 @@
   "description": "A bootstrap for setting up testing.",
   "main": "index.js",
   "scripts": {
-    "test": "jest && npm run test:accessibility",
+    "test": "jest",
     "test:accessibility":"pa11y file://`pwd`/index.html"
   },
   "author": "Nate Hunzaker",
