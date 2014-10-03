@@ -44,3 +44,7 @@ Ask a backend-dev about adding the following to the `.jenkins/build.sh` configur
 npm install -d
 npm test
 ```
+
+## Why Jest?
+
+[I](https://github.com/nhunzaker/) like Jest because it does a good job of isolating tests. Each test gets its own DOM and module system. This is super handy for writing unit tests. Also, because modules must be unmocked by default, it helps to expose dependencies very clearly.
