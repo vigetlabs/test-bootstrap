@@ -10,7 +10,11 @@ To run tests, enter the following commend:
 npm test
 ```
 
-This will execute the [Jest](http://facebook.github.io/jest/) command line interface and scan the project for `__test__` directories. `npm test` is a fantastic way to run tests on any integration server, as it will use local dependencies for any global command line tools.
+This will execute the [Jest](http://facebook.github.io/jest/) command line interface and scan the project for `__test__` directories.
+
+The test command is configured in the `scripts` property of `package.json`. `npm test` will execute the command configured for the `test` attribute of this property.
+
+`npm test`, and `npm run {x}` in general is a fantastic way to run node based tasks. When activated, `npm` will use local dependencies for any global command line tools (such as `gulp`, `grunt`, or `browserify`). This means you don't have to globally install anything on your integration server.
 
 ## Writing new tests
 
